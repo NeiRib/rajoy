@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 const server = http.createServer((req, res) => {
-  if (req.url === '/frase_aleatoria') {
+  if (req.url === '/') {
     fs.readFile(path.join(__dirname, 'frases.json'), 'utf8', (err, data) => {
       if (err) {
         res.writeHead(500, { 'Content-Type': 'application/json' });
