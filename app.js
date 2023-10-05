@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 const server = http.createServer((req, res) => {
-  if (req.url === '/') {
+  if (req.url === '/frase') {
     fs.readFile(path.join(__dirname, 'frases.json'), 'utf8', (err, data) => {
       if (err) {
         res.writeHead(500, { 'Content-Type': 'application/json' });

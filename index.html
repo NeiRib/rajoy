@@ -13,7 +13,7 @@
     const fraseElement = document.getElementById('frase');
 
     obtenerFraseBtn.addEventListener('click', () => {
-      fetch('/frase_aleatoria')
+      fetch('/frase')
         .then(response => response.json())
         .then(data => {
           fraseElement.textContent = data.frase;
