@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Rajoy Momento</title>
+</head>
+<body>
+  <h1>Frases Rajoy</h1>
+  <p id="frase"></p>
+  <button id="obtenerFrase">Dámela</button>
+  <script>
+    const obtenerFraseBtn = document.getElementById('obtenerFrase');
+    const fraseElement = document.getElementById('frase');
+
+    obtenerFraseBtn.addEventListener('click', () => {
+      fetch('/frase_aleatoria')
+        .then(response => response.json())
+        .then(data => {
+          fraseElement.textContent = data.frase;
+        });
+    });
+  </script>
+</body>
+</html>
